@@ -1,21 +1,14 @@
 import cv2
-import numpy as np
 
-# cargar la imagen orignal
-img1 = cv2.imread('prueba.png')
-cv2.imshow("Original",img1)
+img = cv2.imread('prueba.png', cv2.IMREAD_COLOR)
+cv2.imshow("original", img)
 
+# binarización
 
-#escala de grises
-imgGris = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-cv2.imshow("Gris",imgGris)
-
-
-#binarización
-umbral = 85
-mascara = np.uint8((imgGris<umbral)*255)
-cv2.imshow("binaria",mascara)
-
+img2 = cv2.imread('prueba.png', 2)
+ret, bw_img = cv2.threshold(img2, 127, 255, cv2.THRESH_BINARY)
+cv2.imshow("Binaria", bw_img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+

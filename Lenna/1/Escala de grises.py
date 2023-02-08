@@ -1,8 +1,6 @@
 import cv2
 import matplotlib.pyplot as plt
 
-
-
 img2 = cv2.imread('prueba.png', cv2.IMREAD_COLOR)
 
 img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)

@@ -6,14 +6,14 @@ def detect_bill(img):
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
     # Definir los rangos de color para cada billete
-    lower_green = np.array([25, 70, 70])
-    upper_green = np.array([70, 255, 255])
-    lower_yellow = np.array([15, 50, 50])
-    upper_yellow = np.array([30, 255, 255])
-    lower_fuchsia = np.array([160,30,87])
+    lower_green = np.array([25, 50, 50])
+    upper_green = np.array([80, 255, 255])
+    lower_yellow = np.array([10, 80, 80])
+    upper_yellow = np.array([20, 255, 255])
+    lower_fuchsia = np.array([110, 30, 90])
     upper_fuchsia = np.array([180, 255, 255])
     lower_blue = np.array([85, 30, 190])
-    upper_blue = np.array([125, 300, 255])
+    upper_blue = np.array([125,255,255])
 
     # Aplicar mascaras para cada billete
     green_mask = cv2.inRange(hsv, lower_green, upper_green)
@@ -40,7 +40,7 @@ def detect_bill(img):
     else:
         return "Billete no identificado"
 
-imagen = cv2.imread("100old.jpg")
+imagen = cv2.imread("20old.jpg")
 valor = detect_bill(imagen)
 ventana = "VALOR DEL BILLETE: " + str(valor)
 cv2.imshow(ventana, imagen)

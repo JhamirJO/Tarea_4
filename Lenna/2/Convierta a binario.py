@@ -1,5 +1,6 @@
 import cv2
 
+#leer y mostrar la imagen inicial
 img = cv2.imread('prueba.png', cv2.IMREAD_COLOR)
 cv2.imshow("original", img)
 
